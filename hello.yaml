@@ -41,7 +41,7 @@ metadata:
     nirmata.io/component: "hello-world"
     damien: "test1"
 spec:
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 5
   selector:
     matchLabels:
