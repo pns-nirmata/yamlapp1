@@ -1,52 +1,19 @@
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  labels:
-    kubernetes.io/bootstrapping: rbac-defaults
-  managedFields:
-  - apiVersion: rbac.authorization.k8s.io/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:annotations:
-          .: {}
-          f:rbac.authorization.kubernetes.io/autoupdate: {}
-        f:labels:
-          .: {}
-          f:kubernetes.io/bootstrapping: {}
-      f:rules: {}
-    manager: kube-apiserver
-    operation: Update
-  name: get-cluster-access
-rules:
-- apiGroups:
-  - '*'
-  resources:
-  - '*'
-  verbs:
-  - '*'
-- nonResourceURLs:
-  - '*'
-  verbs:
-  - '*'
----
 kind: "Deployment"
 apiVersion: "apps/v1"
 metadata:
   annotations: {}
-  name: "hello-world"
+  name: "hello-worldb1"
   labels:
-    nirmata.io/deployment.name: "hello-world"
-    nirmata.io/application.name: "hello-world"
-    nirmata.io/component: "hello-world"
-    damien: "test1"
+    nirmata.io/deployment.name: "hello-worldb1"
+    nirmata.io/application.name: "hello-worldb1"
+    nirmata.io/component: "hello-worldb1"
 spec:
   replicas: 1
   revisionHistoryLimit: 5
   selector:
     matchLabels:
-      nirmata.io/application.name: "hello-world"
-      nirmata.io/component: "hello-world"
+      nirmata.io/application.name: "hello-worldb1"
+      nirmata.io/component: "hello-worldb1"
     matchExpressions: []
   strategy:
     type: "RollingUpdate"
@@ -61,14 +28,14 @@ spec:
         ccc: "ddd"
       }
       labels:
-        nirmata.io/deployment.name: "hello-world"
-        nirmata.io/application.name: "hello-world"
-        nirmata.io/component: "hello-world"
+        nirmata.io/deployment.name: "hello-worldb1"
+        nirmata.io/application.name: "hello-worldb1"
+        nirmata.io/component: "hello-worldb1"
     spec:
       terminationGracePeriodSeconds: 30
       nodeSelector: {}
       containers:
-      - name: "hello-world"
+      - name: "hello-worldb1"
         image: "busybox"
         command: ["/bin/sh", "-ec", "while :; do echo '.'; sleep 5 ; done"]
         imagePullPolicy: "Always"
