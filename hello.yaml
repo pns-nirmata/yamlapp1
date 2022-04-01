@@ -2,19 +2,19 @@ kind: "Deployment"
 apiVersion: "apps/v1"
 metadata:
   annotations: {}
-  name: "hello-worldb3"
+  name: "hello-worldb2"
   labels:
-    nirmata.io/deployment.name: "hello-worldb3"
-    nirmata.io/application.name: "hello-worldb3"
-    nirmata.io/component: "hello-worldb3"
+    nirmata.io/deployment.name: "hello-worldb2"
+    nirmata.io/application.name: "hello-worldb2"
+    nirmata.io/component: "hello-worldb2"
     damien: "test1"
 spec:
   replicas: 1
   revisionHistoryLimit: 5
   selector:
     matchLabels:
-      nirmata.io/application.name: "hello-worldb3"
-      nirmata.io/component: "hello-worldb3"
+      nirmata.io/application.name: "hello-worldb2"
+      nirmata.io/component: "hello-worldb2"
     matchExpressions: []
   strategy:
     type: "RollingUpdate"
@@ -29,14 +29,14 @@ spec:
         ccc: "ddd"
       }
       labels:
-        nirmata.io/deployment.name: "hello-worldb3"
-        nirmata.io/application.name: "hello-worldb3"
-        nirmata.io/component: "hello-worldb3"
+        nirmata.io/deployment.name: "hello-worldb2"
+        nirmata.io/application.name: "hello-worldb2"
+        nirmata.io/component: "hello-worldb2"
     spec:
       terminationGracePeriodSeconds: 30
       nodeSelector: {}
       containers:
-      - name: "hello-worldb3"
+      - name: "hello-worldb2"
         image: "busybox"
         command: ["/bin/sh", "-ec", "while :; do echo '.'; sleep 5 ; done"]
         imagePullPolicy: "Always"
